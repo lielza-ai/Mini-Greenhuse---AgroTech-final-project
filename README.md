@@ -136,7 +136,7 @@ Connect the components to the ESP32 Firebeetle board as shown in the provided di
 ### Power Management 
 •	Connect the 12V source to the Buck Converter
 •	Ensure the output is set to 5V before connecting to the ESP32 and sensors to prevent damage
-# 2.Software Configuration
+## 2.Software Configuration
 Follow these steps to flash the firmware and start monitoring
 ### i.	Install Libraries
 **Ensure the following libraries are installed in your Arduino IDE:**
