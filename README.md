@@ -122,10 +122,13 @@ To get the project up and running please follow the wiring diagram and configura
 ## 1.Hardware Setup Wiring
 Connect the components to the ESP32 Firebeetle board as shown in the provided diagram
 ### SHT31 Temperature and Humidity Sensors:
-•	Indoor Sensor I Connect to the primary I2C pins )SDA to 21 SCL to 22( 
-•	Outdoor Sensor II Connect to designated pins D10) SDA( and D11 )SCL(
+•	Indoor Sensor I Connect to the primary I2C pins (SDA to 21 SCL to 22)
+
+•	Outdoor Sensor II Connect to designated pins D10 (SDA) and D11 (SCL)
 ### Leaf Wetness Sensor:
+
 •	Connect the signal line to analog pin A4
+
 •	This sensor requires a Voltage Divider to step down the signal Use a 10k and 20k resistor as shown in the diagram to protect the ESP32
 ### Fan Control-Relay
 •	Connect the IN pin of the relay to digital pin D2 
