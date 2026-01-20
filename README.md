@@ -115,3 +115,44 @@ The system targets a VPD range of **0.8–1.1 kPa**, corresponding to the vegeta
 | **VPD too high + leaf dry**        | Mist ON → increase leaf moisture, reduce VPD |
 | **VPD too high + leaf wet**        | Do nothing (leaf already moist) |
 | **VPD optimal**                     | All actuators OFF |
+
+#Instructions and Operation Guide
+To get the project up and running please follow the wiring diagram and configuration steps below
+
+## 1.Hardware Setup Wiring
+Connect the components to the ESP32 Firebeetle board as shown in the provided diagram
+### SHT31 Temperature and Humidity Sensors:
+•	Indoor Sensor I Connect to the primary I2C pins )SDA to 21 SCL to 22( 
+•	Outdoor Sensor II Connect to designated pins D10) SDA( and D11 )SCL(
+### Leaf Wetness Sensor:
+•	Connect the signal line to analog pin A4
+•	This sensor requires a Voltage Divider to step down the signal Use a 10k and 20k resistor as shown in the diagram to protect the ESP32
+### Fan Control-Relay
+•	Connect the IN pin of the relay to digital pin D2 
+•	The relay acts as a switch for the 12V fan motor
+### Power Management 
+•	Connect the 12V source to the Buck Converter
+•	Ensure the output is set to 5V before connecting to the ESP32 and sensors to prevent damage
+# 2.Software Configuration
+Follow these steps to flash the firmware and start monitoring
+### i.	Install Libraries
+**Ensure the following libraries are installed in your Arduino IDE:**
+
+• Adafruit_SHT31 (for environmental sensing)
+
+• PubSubClient (for MQTT communication) 
+
+• ThingSpeak (for data logging)
+
+### ii.	Communication Details (Open the code and fill in your credentials)
+ WiFi Update WIFI_SSID and WIFI_PASSWORD 
+ThingSpeak Enter Think Speak channel number and Think Speak  API Key 
+MQTT Verify the MQTT_SERVER address for the greenhouse irrigation control
+
+### iii.	Upload Code:
+connect the ESP32 to your computer via USB select the correct COM port and click upload
+
+### iv.	Access Dashboard:
+Once connected open the Serial Monitor (115200 baud) Find the IP address displayed Enter it into any web browser on the same network to view the live Greenhouse Control Dashboard.
+
+
